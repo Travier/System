@@ -6,7 +6,6 @@
 function System(libraryLinks, debugMode = false) {
     this.ready = false;
     this.debugMode = debugMode;
-    this.loadedLinks = [];
     this.libraryLinks = libraryLinks;
     this.callbacks = [];
 
@@ -57,12 +56,12 @@ System.prototype.finishedMountLoop = function() {
 }
 
 /**
- * Mount a script to the dom
+ * Mount script to the dom
  * @param string link 
  * @param function callback 
  */
 System.prototype.mountLibraryLink = function(link, callback) {
-    //get page head element
+    //get head element
     var head = document.getElementsByTagName('head')[0];
     //make script element
     var script = document.createElement('script');
